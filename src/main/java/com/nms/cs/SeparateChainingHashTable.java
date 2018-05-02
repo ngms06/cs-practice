@@ -116,7 +116,6 @@ public class SeparateChainingHashTable<K, V> {
         return symbolTableString.toString();
     }
 
-    // Driver method to tessymbolTable[hash]t Map class
     public static void main(String[] args) {
         SeparateChainingHashTable<String, Integer> map = new SeparateChainingHashTable<>(2);
         map.put("this", 1);
