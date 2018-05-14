@@ -1,4 +1,4 @@
-package com.nms.cs;
+package com.nms.cs.hashing;
 
 public class SeparateChainingHashTable<K, V> {
 

@@ -1,13 +1,13 @@
-package com.nms.cs;
+package com.nms.cs.priorityqueue;
 
 import java.util.Arrays;
 
-public class PriorityQueueBinaryHeap<Item extends Comparable> {
+public class MaxHeap<Item extends Comparable> {
 
     private Item[] priorityQueue;
     private int currentInsertIndex;
 
-    public PriorityQueueBinaryHeap(int capacity) {
+    public MaxHeap(int capacity) {
         priorityQueue = (Item[]) new Comparable[capacity + 1];
         currentInsertIndex = 1;
     }
@@ -48,7 +48,7 @@ public class PriorityQueueBinaryHeap<Item extends Comparable> {
 
     public Item removeMax() {
         //Swap max element
-        Item max = priorityQueue[currentInsertIndex - 1];
+        Item max = priorityQueue[1];
         swap(1, currentInsertIndex - 1);
         priorityQueue[currentInsertIndex - 1] = null;
         currentInsertIndex -= 1;
@@ -73,8 +73,12 @@ public class PriorityQueueBinaryHeap<Item extends Comparable> {
         System.out.println(Arrays.toString(priorityQueue));
     }
 
+    public Item[] getPriorityQueue() {
+        return priorityQueue;
+    }
+
     public static void main(String[] args) {
-        PriorityQueueBinaryHeap pqb = new PriorityQueueBinaryHeap(12);
+        MaxHeap pqb = new MaxHeap(12);
         pqb.insert("T");
         pqb.insert("P");
         pqb.insert("R");
